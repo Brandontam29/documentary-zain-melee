@@ -1,0 +1,10 @@
+@import "../commons/variables";
+@import "../commons/placeholders";
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media #{$mq-small-screen} {
+    }
+}

@@ -1,0 +1,62 @@
+/**
+ * Colors
+ */
+$color-black: #000;
+$dark-grey: #1e1e1e;
+$color-white: #fff;
+
+$color-background: $dark-grey;
+$color-text: $color-white;
+
+/**
+ * Fonts
+ */
+$font-title: "Hevetica", sans-serif;
+$font-text: "Arial", sans-serif;
+
+$smaller-mobile: 12px;
+$smaller-desktop: 14px;
+$smaller-wide: 16px;
+
+$small-mobile: 14px;
+$small-desktop: 16px;
+$small-wide: 18px;
+
+$normal-mobile: 16px;
+$normal-desktop: 18px;
+$normal-wide: 20px;
+
+$large-mobile: 18px; // h4
+$large-desktop: 20px;
+$large-wide: 22px;
+
+$larger-mobile: 24px; // h3
+$larger-desktop: 26px;
+$larger-wide: 30px;
+
+$big-mobile: 34px; // h2
+$big-desktop: 36px;
+$big-wide: 40px;
+
+$biggest-mobile: 48px; // h1
+$biggest-desktop: 50px;
+$biggest-wide: 54px;
+
+$line-height-text: 1.25;
+
+/**
+  * Screen size
+  */
+$small-screen: 600px;
+$normal-screen: 800px;
+$medium-screen: 1024px;
+$large-screen: 1440px;
+$xlarge-screen: 1920px;
+
+/**
+  * Media queries
+  */
+$mq-small-screen: "only screen and (min-width: #{$small-screen})";
+$mq-medium-screen: "only screen and (min-width: #{$medium-screen})";
+$mq-large-screen: "only screen and (min-width: #{$large-screen})";
+$mq-xlarge-screen: "only screen and (min-width: #{$xlarge-screen})";

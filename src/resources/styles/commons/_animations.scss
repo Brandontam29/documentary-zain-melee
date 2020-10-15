@@ -1,0 +1,28 @@
+@import "../commons/variables";
+@import "../commons/placeholders";
+
+/**
+ * keyframes
+ */
+@keyframes key-fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/**
+ * placeholders
+ */
+%fade-in {
+    animation-name: key_fadeIn;
+    animation-duration: 1200ms;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    opacity: 0;
+}
