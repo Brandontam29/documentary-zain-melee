@@ -10,6 +10,5 @@
             }
         ],
         "max-nesting-depth": 4,
-        "string-quotes": "double",
     }
 }

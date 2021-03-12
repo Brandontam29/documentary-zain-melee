@@ -4,26 +4,16 @@ import React, { lazy, Suspense } from 'react';
 
 const propTypes = {
     importFunc: PropTypes.func.isRequired,
-    selectorFunc: PropTypes.func.isRequired,
-    opts: PropTypes.shape({
-        fallback: PropTypes.node,
-    }),
     fallback: PropTypes.node,
 };
 
 const defaultProps = {};
 
-const lazyLoad = (importFunc, selectorFunc, opts) => {
-    let lazyFactory = importFunc;
-
-    if (selectorFunc) {
-        lazyFactory = () => importFunc().then((module) => ({ default: selectorFunc(module) }));
-    }
-
-    const LazyComponent = lazy(lazyFactory);
+const lazyLoad = (importFunc, fallback) => {
+    const LazyComponent = lazy(importFunc);
 
     return (props) => (
-        <Suspense fallback={opts.fallback}>
+        <Suspense fallback={fallback()}>
             <LazyComponent {...props} />
         </Suspense>
     );
@@ -42,5 +32,5 @@ export default lazyLoad;
 
 // export const NotFoundPage = lazyLoad(
 //   () => import('./index'),
-//   module => module.NotFoundPage,
+//   Fallback,
 // );

@@ -1,10 +1,19 @@
-@import "../commons/variables";
-@import "../commons/placeholders";
+@import '../commons/variables';
+@import '../commons/placeholders';
 
 .container {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display: grid;
+    position: relative;
 
-    @media #{$mq-small-screen} {
+    grid-template-rows: auto 1fr auto;
+    min-height: 100%;
+
+    .header {
+        position: fixed;
+        z-index: 1000;
+
+        top: 0;
+        right: 0;
+        left: 0;
     }
 }

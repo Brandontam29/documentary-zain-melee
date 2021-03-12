@@ -1,0 +1,29 @@
+@import '../commons/variables';
+@import '../commons/placeholders';
+
+.container {
+    position: relative;
+    width: 100%;
+
+    .backgroundYellow1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-size: cover;
+    }
+
+    .zain {
+        position: relative;
+    }
+
+    @media #{$mq-medium-screen} {
+        //
+    }
+}

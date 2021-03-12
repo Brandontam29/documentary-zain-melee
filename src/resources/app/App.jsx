@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from "prop-types";
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 // import * as AppPropTypes from "../lib/PropTypes";
@@ -21,7 +21,6 @@ const App = () => {
         const Component = component;
         return (
             <Layout>
-
                 <Component />
             </Layout>
 

@@ -57,6 +57,7 @@ $xlarge-screen: 1920px;
   * Media queries
   */
 $mq-small-screen: "only screen and (min-width: #{$small-screen})";
+$mq-normal-screen: "only screen and (min-width: #{$normal-screen})";
 $mq-medium-screen: "only screen and (min-width: #{$medium-screen})";
 $mq-large-screen: "only screen and (min-width: #{$large-screen})";
 $mq-xlarge-screen: "only screen and (min-width: #{$xlarge-screen})";

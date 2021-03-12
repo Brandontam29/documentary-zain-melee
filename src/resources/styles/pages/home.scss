@@ -1,0 +1,9 @@
+@import '../commons/variables';
+@import '../commons/placeholders';
+
+.container {
+    margin-top: 50px;
+
+    @media #{$mq-normal-screen} {
+    }
+}

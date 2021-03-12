@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import { Helmet } from 'react-helmet-async';
 import classNames from 'classnames';
 
@@ -9,6 +9,7 @@ import Header from '../partials/Header';
 import styles from '../../../styles/main/layout.scss';
 
 const propTypes = {
+    children: PropTypes.node.isRequired,
     className: AppPropTypes.className,
 };
 
@@ -16,21 +17,17 @@ const defaultProps = {
     className: null,
 };
 
-const Layout = ({ className }) => {
+const Layout = ({ children, className }) => {
     const [sticky, setSticky] = useState(false);
 
     const scrollFunction = (threshold) => {
-        if (
-            document.body.scrollTop > threshold
-        || document.documentElement.scrollTop > threshold
-        ) {
+        if (document.body.scrollTop > threshold || document.documentElement.scrollTop > threshold) {
             return setSticky(true);
         }
         return setSticky(false);
     };
 
     window.onscroll = () => scrollFunction(80);
-    console.log(sticky);
 
     return (
         <div
@@ -41,7 +38,8 @@ const Layout = ({ className }) => {
                 },
             ])}
         >
-            <Header sticky={sticky} />
+            <Header sticky={sticky} className={styles.header} />
+            {children}
         </div>
     );
 };

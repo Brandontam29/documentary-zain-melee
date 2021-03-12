@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
 module.exports = {
     entry: ['react-hot-loader/patch', './src/index.js'],
     module: {
@@ -15,19 +14,28 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: [{
-                    loader: 'html-loader',
-                }],
+                use: [
+                    {
+                        loader: 'html-loader',
+                    },
+                ],
             },
+
             {
                 test: /\.(jpe?g|png|gif)$/,
                 use: [
-                    // {
-                    //     loader: 'url-loader',
-                    //     options: {
-                    //         limit: 10240,
-                    //     },
-                    // },
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'images/',
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.mp4$/,
+                use: [
                     {
                         loader: 'file-loader',
                         options: {
@@ -72,11 +80,6 @@ module.exports = {
             template: './public/index.html',
         }),
     ],
-    // output: {
-    //     path: path.resolve(__dirname, '../', 'dist'),
-    //     publicPath: './',
-    //     filename: '[name].[contenthash].js',
-    // },
     devServer: {
         open: true,
         hot: true,
